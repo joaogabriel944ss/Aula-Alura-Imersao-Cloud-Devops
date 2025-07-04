@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # Serviço da sua aplicação FastAPI
+  app:
+    # Constrói a imagem a partir de um Dockerfile no diretório atual (.)
+    build: .
+    container_name: ellis-app
+    # Mapeia a porta 8000 do host para a porta 8000 do contêiner
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual dentro do contêiner para desenvolvimento em tempo real
+    volumes:
+      - .:/app
+
+
